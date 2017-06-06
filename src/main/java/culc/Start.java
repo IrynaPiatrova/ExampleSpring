@@ -2,8 +2,6 @@ package culc;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.Scanner;
-
 /**
  * Created by John on 02.06.2017.
  */
@@ -14,11 +12,13 @@ public class Start {
 
     public static void main(String[] args) {
         ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("configprob.xml");
-        CulcInter plus = (CulcInter) classPathXmlApplicationContext.getBean("plus");
+        SqrtSolver solver = (SqrtSolver) classPathXmlApplicationContext.getBean("solver");
+        solver.getX();
+        /*CulcInter plus = (CulcInter) classPathXmlApplicationContext.getBean("plus");
         CulcInter minus = (CulcInter) classPathXmlApplicationContext.getBean("minus");
         CulcInter multipl = (CulcInter) classPathXmlApplicationContext.getBean("multipl");
         CulcInter root = (CulcInter) classPathXmlApplicationContext.getBean("root");
-        CulcInter divide = (CulcInter) classPathXmlApplicationContext.getBean("divide");
+        CulcInter divide = (CulcInter) classPathXmlApplicationContext.getBean("divide");*/
         /*CulcInter culcPlus = new Plus(args[0], args[1]);*/
         // System.out.println(culcPlus.culc());
         /*culc.CulcInter culcMinus = new culc.Minus(args[0], args[1]);
@@ -27,17 +27,18 @@ public class Start {
         System.out.println(culculator.culc(args[0], args[1]));*/ //2
         //System.out.println(args[0] + args[1]); //1
 
-        insertValues();
+        /*insertValues();
         double d = getD(multipl, minus);
         root.setA(d);
         double culcRoot = root.culc();
         double x1 = getX1(multipl, plus, divide, culcRoot);
-        double x2 = getX2(multipl, minus, divide, culcRoot);
+        double x2 = getX1(multipl, minus, divide, culcRoot);
         System.out.println("X1 = " + x1);
-        System.out.println("X2 = " + x2);
+        System.out.println("X2 = " + x2);*/
     }
+}
 
-    private static double getX1(CulcInter multipl, CulcInter plus, CulcInter divide, double d) {
+    /*private static double getX1(CulcInter multipl, CulcInter plus, CulcInter divide, double d) {
         divide.setA(getZnam(multipl, plus, d));
         divide.setB(getDel(multipl));
         return divide.culc();
@@ -67,11 +68,11 @@ public class Start {
         return multipl.culc();
     }
 
-   /* private static double getZnam(CulcInter multipl, CulcInter minus, double d) {
+   *//* private static double getZnam(CulcInter multipl, CulcInter minus, double d) {
         minus.setA(gerOtrB(multipl));
         minus.setB(d);
         return minus.culc();
-    }*/
+    }*//*
 
     private static double getD(CulcInter multipl, CulcInter minus) {
         multipl.setA(4);
@@ -102,3 +103,4 @@ public class Start {
     }
 
 }
+*/

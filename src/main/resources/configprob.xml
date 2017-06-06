@@ -9,5 +9,20 @@
     <bean id="multipl" class="culc.Multiplication"/>
     <bean id="root" class="culc.Root"/>
     <bean id="divide" class="culc.Divide"/>
+
+    <bean id="plusR" class="culc.Plus"/>
+    <bean id="minusR" class="culc.Minus"/>
+    <bean id="multiplR" class="culc.Multiplication"/>
+    <bean id="rootR" class="culc.Root"/>
+    <bean id="divideR" class="culc.Divide"/>
+
+    <bean id="solver" class="culc.Solver">
+        <property name="plus" ref="plusR"/>
+        <property name="minus" ref="minusR"/>
+        <property name="multiplication" ref="multiplR"/>
+        <property name="root" ref="rootR"/>
+        <property name="divide" ref="divideR"/>
+    </bean>
+
 </beans>
 </beans>
