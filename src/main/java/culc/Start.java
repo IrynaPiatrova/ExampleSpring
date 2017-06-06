@@ -14,11 +14,11 @@ public class Start {
 
     public static void main(String[] args) {
         ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("configprob.xml");
-        Plus plus = (Plus) classPathXmlApplicationContext.getBean("plus");
-        Minus minus = (Minus) classPathXmlApplicationContext.getBean("minus");
-        Multiplication multipl = (Multiplication) classPathXmlApplicationContext.getBean("multipl");
-        Root root = (Root) classPathXmlApplicationContext.getBean("root");
-        Divide divide = (Divide) classPathXmlApplicationContext.getBean("divide");
+        CulcInter plus = (CulcInter) classPathXmlApplicationContext.getBean("plus");
+        CulcInter minus = (CulcInter) classPathXmlApplicationContext.getBean("minus");
+        CulcInter multipl = (CulcInter) classPathXmlApplicationContext.getBean("multipl");
+        CulcInter root = (CulcInter) classPathXmlApplicationContext.getBean("root");
+        CulcInter divide = (CulcInter) classPathXmlApplicationContext.getBean("divide");
         /*CulcInter culcPlus = new Plus(args[0], args[1]);*/
         // System.out.println(culcPlus.culc());
         /*culc.CulcInter culcMinus = new culc.Minus(args[0], args[1]);
@@ -37,43 +37,43 @@ public class Start {
         System.out.println("X2 = " + x2);
     }
 
-    private static double getX1(Multiplication multipl, Plus plus, Divide divide, double d) {
+    private static double getX1(CulcInter multipl, CulcInter plus, CulcInter divide, double d) {
         divide.setA(getZnam(multipl, plus, d));
         divide.setB(getDel(multipl));
         return divide.culc();
     }
 
-    private static double getX2(Multiplication multipl, Minus minus, Divide divide, double d) {
+    private static double getX2(CulcInter multipl, CulcInter minus, CulcInter divide, double d) {
         divide.setA(getZnam(multipl, minus, d));
         divide.setB(getDel(multipl));
         return divide.culc();
     }
 
-    private static double getDel(Multiplication multipl) {
+    private static double getDel(CulcInter multipl) {
         multipl.setA(2);
         multipl.setB(a);
         return multipl.culc();
     }
 
-    private static double getZnam(Multiplication multipl, Plus plus, double d) {
+    private static double getZnam(CulcInter multipl, CulcInter plus, double d) {
         plus.setA(gerOtrB(multipl));
         plus.setB(d);
         return plus.culc();
     }
 
-    private static double gerOtrB(Multiplication multipl) {
+    private static double gerOtrB(CulcInter multipl) {
         multipl.setA(-1);
         multipl.setB(b);
         return multipl.culc();
     }
 
-    private static double getZnam(Multiplication multipl, Minus minus, double d) {
+   /* private static double getZnam(CulcInter multipl, CulcInter minus, double d) {
         minus.setA(gerOtrB(multipl));
         minus.setB(d);
         return minus.culc();
-    }
+    }*/
 
-    private static double getD(Multiplication multipl, Minus minus) {
+    private static double getD(CulcInter multipl, CulcInter minus) {
         multipl.setA(4);
         multipl.setB(c);
         multipl.setA(multipl.culc());

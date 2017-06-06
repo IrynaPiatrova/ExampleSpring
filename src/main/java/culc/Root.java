@@ -22,6 +22,15 @@ public class Root implements CulcInter {
     }
 
     @Override
+    public double getB() {
+        return a;
+    }
+
+    @Override
+    public void setB(double b) {
+    }
+
+    @Override
     public double culc() {
         return Math.sqrt(a);
     }

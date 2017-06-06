@@ -5,4 +5,12 @@ package culc;
  */
 public interface CulcInter {
     double culc();
+
+    double getA();
+
+    void setA(double a);
+
+    double getB();
+
+    void setB(double b);
 }
